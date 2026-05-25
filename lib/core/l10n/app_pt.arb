@@ -1,0 +1,12 @@
+{
+  "@@locale": "pt",
+  "appTitle": "FinSystem",
+  "homeTab": "Inicio",
+  "cardsTab": "Cartões",
+  "transactionsTab": "Transações",
+  "goalsTab": "Metas",
+  "homeAppBarTitle": "Conta corrente",
+  "cardsAppBarTitle": "Cartões",
+  "transactionsAppBarTitle": "Transações",
+  "goalsAppBarTitle": "Metas"
+}

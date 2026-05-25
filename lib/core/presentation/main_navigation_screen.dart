@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:fin_system/core/l10n/app_localizations.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -18,41 +19,35 @@ class MainNavigationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+
     if (Platform.isIOS || Platform.isMacOS) {
       return Scaffold(
         body: navigationShell,
         bottomNavigationBar: CupertinoTabBar(
           currentIndex: navigationShell.currentIndex,
           onTap: (index) => _onTap(context, index),
-          items: const [
+          items: [
             BottomNavigationBarItem(
-              icon: Icon(CupertinoIcons.building_2_fill),
-              label: 'Bancos',
+              icon: const Icon(CupertinoIcons.building_2_fill),
+              label: l10n.homeTab,
             ),
             BottomNavigationBarItem(
-              icon: Icon(CupertinoIcons.creditcard),
-              label: 'Contas',
+              icon: const Icon(CupertinoIcons.creditcard),
+              label: l10n.cardsTab,
             ),
             BottomNavigationBarItem(
-              icon: Icon(CupertinoIcons.home),
-              label: 'Bancos',
+              icon: const Icon(CupertinoIcons.arrow_right_arrow_left),
+              label: l10n.transactionsTab,
             ),
             BottomNavigationBarItem(
-              icon: Icon(CupertinoIcons.creditcard),
-              label: 'Cartões',
+              icon: const Icon(CupertinoIcons.flag),
+              label: l10n.goalsTab,
             ),
-            BottomNavigationBarItem(
-              icon: Icon(CupertinoIcons.arrow_right_arrow_left),
-              label: 'Transações',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(CupertinoIcons.flag),
-              label: 'Metas',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(CupertinoIcons.chart_bar_alt_fill),
-              label: 'Patrimonio',
-            ),
+            // BottomNavigationBarItem(
+            //   icon: const Icon(CupertinoIcons.chart_bar_alt_fill),
+            //   label: 'Patrimonio',
+            // ),
           ],
         ),
       );
@@ -79,30 +74,30 @@ class MainNavigationScreen extends StatelessWidget {
         child: NavigationBar(
           selectedIndex: navigationShell.currentIndex,
           onDestinationSelected: (index) => _onTap(context, index),
-          destinations: const [
+          destinations: [
             NavigationDestination(
-              icon: Icon(Icons.home_outlined),
-              selectedIcon: Icon(Icons.home),
-              label: 'Bancos',
+              icon: const Icon(Icons.home_outlined),
+              selectedIcon: const Icon(Icons.home),
+              label: l10n.homeTab,
             ),
             NavigationDestination(
-              icon: Icon(Icons.credit_card_outlined),
-              selectedIcon: Icon(Icons.credit_card),
-              label: 'Cartões',
+              icon: const Icon(Icons.credit_card_outlined),
+              selectedIcon: const Icon(Icons.credit_card),
+              label: l10n.cardsTab,
             ),
             NavigationDestination(
-              icon: Icon(Icons.swap_horiz_outlined),
-              selectedIcon: Icon(Icons.swap_horiz),
-              label: 'Transações',
+              icon: const Icon(Icons.swap_horiz_outlined),
+              selectedIcon: const Icon(Icons.swap_horiz),
+              label: l10n.transactionsTab,
             ),
             NavigationDestination(
-              icon: Icon(Icons.flag_outlined),
-              selectedIcon: Icon(Icons.flag),
-              label: 'Metas',
+              icon: const Icon(Icons.flag_outlined),
+              selectedIcon: const Icon(Icons.flag),
+              label: l10n.goalsTab,
             ),
             // NavigationDestination(
-            //   icon: Icon(Icons.bar_chart_outlined),
-            //   selectedIcon: Icon(Icons.bar_chart),
+            //   icon: const Icon(Icons.bar_chart_outlined),
+            //   selectedIcon: const Icon(Icons.bar_chart),
             //   label: 'Patrimonio',
             // ),
           ],

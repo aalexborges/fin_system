@@ -1,0 +1,12 @@
+{
+  "@@locale": "en",
+  "appTitle": "FinSystem",
+  "homeTab": "Home",
+  "cardsTab": "Cards",
+  "transactionsTab": "Transactions",
+  "goalsTab": "Goals",
+  "homeAppBarTitle": "Checking account",
+  "cardsAppBarTitle": "Cards",
+  "transactionsAppBarTitle": "Transactions",
+  "goalsAppBarTitle": "Goals"
+}
